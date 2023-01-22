@@ -22,6 +22,3 @@ Clone this repository :
 ```bash
 git clone https://github.com/AugustinBriolon/
 ```
-
-# gradientBackground
-# gradientBackground
