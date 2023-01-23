@@ -20,5 +20,5 @@ And to run localhost
 Clone this repository : 
 
 ```bash
-git clone https://github.com/AugustinBriolon/
+git clone https://github.com/AugustinBriolon/gradientBackground.git
 ```

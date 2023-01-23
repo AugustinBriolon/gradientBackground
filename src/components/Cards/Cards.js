@@ -4,26 +4,25 @@ import cards from './cards.json';
 
 export default function Cards() {
 
-  let card = cards.cards
+  let card = cards.cards;
 
-  function copyBackground(i) {
-    console.log(card[i]);
-    let copyText = `background-image: linear-gradient(0deg, ${card[i].from}, ${card[i].to})`;
-    navigator.clipboard.writeText(copyText);
-  }
-
+  document.querySelectorAll('.cards').forEach(cards => {
+    cards.addEventListener('click', () => {
+        console.log(cards.innerText);
+        navigator.clipboard.writeText(cards.innerText);
+    });
+});
 
   return (
     <>
       {card.map((card) => (
-        <div key={uuidv4()} className="cards" onClick={copyBackground}>
-          <div style={{
-            backgroundImage: `linear-gradient(0deg, ${card.from}, ${card.to})`
-          }} className="bgGardient">
+        <div key={uuidv4()} className="cards" >
+          <div className="bgGardient" style={{backgroundImage: `linear-gradient(90deg, ${card.from}, ${card.to})`}}>
           </div>
+          background-image: linear-gradient(90deg, {card.from}, {card.to})
           <div className="describ">
-            <p>From : {card.from}</p>
-            <p>To : {card.to}</p>
+            <hr />
+            <p>background-image: linear-gradient(90deg, {card.from}, {card.to})</p>
           </div>
         </div>
       ))}

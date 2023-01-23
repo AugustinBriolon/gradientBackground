@@ -1,15 +1,33 @@
 .cards {
+  color: transparent;
+  width: clamp(150px, 300px, 350px);
+  height: 300px;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+  background: white;
+  border-radius: 10px;
+  z-index: 999;
 
   .bgGardient {
-    width: 200px;
-    height: 100px;
+    width: 100%;
+    height: 300px;
+    border-radius: 10px 10px 0 0;
   }
 
   .describ {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    background-color: white;
+    padding: 0 10px 10px;
+    border-radius: 0 0 10px 10px;
+
+    hr {
+      margin: 10px 0;
+      width: 60%;
+      border: 1px solid #000000;
+    }
+
+    p {
+      color: black;
+    }
   }
 }
