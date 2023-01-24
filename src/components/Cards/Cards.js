@@ -5,27 +5,36 @@ import cards from './cards.json';
 export default function Cards() {
 
   let card = cards.cards;
-  let cardText = document.querySelectorAll('.card');
 
-  function copyCardText() {
-    navigator.clipboard.writeText(this.innerText);
-    console.log(this.innerText);
+  function copyToClipboard(e) {
+    let text = e.target.innerText;
+    console.log(text);
+    navigator.clipboard.writeText(text);
+    createNotification();
   }
 
-  cardText.forEach(cardText => {
-    cardText.onclick = copyCardText;
-  });
+  // function to create a notification when the user copy the code
+  function createNotification() {
+    let notification = document.createElement('div');
+    notification.classList.add('notification');
+    notification.innerHTML = 'Copied to clipboard';
+    document.body.appendChild(notification);
+    setTimeout(() => {
+      notification.remove();
+    }, 2000);
+  }
+
 
   return (
     <>
       {card.map((card) => (
-        <div key={uuidv4()} className="cards" >
+        <div key={uuidv4()} className="cards" onClick={copyToClipboard}>
           <div className="bgGardient" style={{ backgroundImage: `linear-gradient(90deg, ${card.from}, ${card.to})` }}>
-          </div>
-          background-image: linear-gradient(90deg, {card.from}, {card.to})
-          <div className="describ">
-            <hr />
-            <p>background-image: linear-gradient(90deg, {card.from}, {card.to})</p>
+            {/* background-image: linear-gradient(90deg, {card.from}, {card.to}) */}
+            <div className="describ">
+              <hr />
+              <p>background-image: linear-gradient(90deg, {card.from}, {card.to})</p>
+            </div>
           </div>
         </div>
       ))}

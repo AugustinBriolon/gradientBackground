@@ -1,13 +1,21 @@
-
 h1{
   font-family: $fontZighead;
   font-weight: 600;
   font-size: clamp(2rem, 10vw, 12rem);
+  margin: 35px 0 0;
+}
+
+h2{
+  font-family: $fontMontserrat;
+  font-weight: 600;
+  font-size: clamp(1rem, 4vw, 6rem);
   margin: 35px 0;
+  text-align: center;
 }
 
 p{
-  font-weight: 300;
+  font-family: $fontMontserrat;
+  font-weight: 400;
   font-size: 20px;
 }
 
